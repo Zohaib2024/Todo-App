@@ -36,26 +36,26 @@ function App() {
   return (
     <>
    
-      <div className="m-10 my-5 rounded-xl p-5 text-center bg-violet-200 min-h-[80vh]">
+      <div className="mx-auto w-80 my-10 shadow-md rounded-xl p-5 text-center bg-blue-200 min-h-[80vh]">
         <div className="AddTodo my-5">
           <div className="font-bold">
             <h1 className="text-xl mb-4">Add Todo</h1>
             <input
               type="text"
-              className="w-1/2 border border-gray-400 p-2 rounded"
+              className="w-44 border border-gray-400 p-2 rounded"
               onChange={handlechange}
               value={todo}
             />
             <button
               onClick={handleAdd}
-              className="bg-violet-800 hover:bg-violet-950 p-3 py-1 text-white rounded-md mx-6"
+              className="bg-blue-800 hover:bg-blue-950 p-3 py-1 text-white rounded-md mx-2 m-4"
             >
               Add
             </button>
           </div>
         </div>
         <h1 className="font-bold text-xl mb-4">Your Todos</h1>
-        <div className="todos w-1/2 mx-auto"> {/* Center the todo container */}
+        <div className=" todos w-64 mx-auto"> {/* Center the todo container */}
           {todos.map((item) => {
             return (
               <div
@@ -70,19 +70,19 @@ function App() {
                   id=""
                   className="mr-2"
                 />
-                <div className={item.iscompleted ? "line-through flex-grow text-left" : "flex-grow text-left"}>
+                <div className={item.iscompleted ? "line-through flex-grow text-left mr-2" : "flex-grow text-left mr-2"}>
                   {item.todo}
                 </div>
                 <div className="btn flex space-x-2">
                   <button
                     onClick={() => handleEdit(item.id)}
-                    className="bg-violet-800 hover:bg-violet-950 p-2 py-1 text-white rounded-md"
+                    className="bg-blue-800 hover:bg-blue-950 p-2 py-1 text-white rounded-md"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => handledelete(item.id)}
-                    className="bg-violet-800 hover:bg-violet-950 p-2 py-1 text-white rounded-md"
+                    className="bg-blue-800 hover:bg-blue-950 p-2 py-1 text-white rounded-md"
                   >
                     Delete
                   </button>
